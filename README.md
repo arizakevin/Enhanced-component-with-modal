@@ -51,7 +51,7 @@ and the modal of your preference. Then, use it wherever you need it.
             onPress={() => callback(!props.visible)}
             title="Show Modal"
         />
-    )
+    );
 
     export default CustomButton;
 
@@ -100,19 +100,17 @@ and the modal of your preference. Then, use it wherever you need it.
         import React from "react";
         import { Text } from "react-native";
 
-        const CustomText = ({ CustomButton }) => {
-            return(
-                <>
-                    <Text>This is the component to be enhanced with the modal</Text>
-                    {/* 
-                        Place the button that opens your modal wherever you need it,
-                        once you pass the button to the withModal wrapper, this will
-                        give it to this component as a prop.
-                    */}
-                    <CustomButton />
-                </>
-            );
-        };
+        const CustomText = ({ CustomButton }) =>(
+            <>
+                <Text>This is the component to be enhanced with the modal</Text>
+                {/* 
+                    Place the button that opens your modal wherever you need it,
+                    once you pass the button to the withModal wrapper, this will
+                    give it to this component as a prop.
+                */}
+                <CustomButton />
+            </>
+        );
 
         export default CustomText;
 
