@@ -39,7 +39,7 @@ and the modal of your preference. Then, use it wherever you need it.
 
 ### Requirements:
 
-- CustomButtom needs to receive the "visible" boolean prop to work.
+CustomButtom needs to receive the "visible" boolean prop to work.
 
     // CustomButton.js
     // You can change the style of the CustomButtom to fit the requirements of your UI.
@@ -64,7 +64,7 @@ and the modal of your preference. Then, use it wherever you need it.
 
     export default CustomButton;
 
-- CustomModal needs to receive the "visible" boolean prop and the "callback" function to work.
+CustomModal needs to receive the "visible" boolean prop and the "callback" function to work.
 
     // CustomModal.js
     // This an example of a Modal.
@@ -101,7 +101,7 @@ and the modal of your preference. Then, use it wherever you need it.
 
     export default CustomModal;
 
-- EnhancedComponent needs to receive the CustomButton as a prop to be able to open the modal.
+EnhancedComponent needs to receive the CustomButton as a prop to be able to open the modal.
 
         // This is the component/screen you want to enhance with the modal.
         // Make sure it receives the CustomButtom component through props.
