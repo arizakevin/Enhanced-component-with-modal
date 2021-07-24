@@ -1,5 +1,7 @@
 # Description
-withModal.js is a Higher-Order Component that consumes any component/screen, a button, and a modal, and returns the component/screen enhanced with all the logic necessary for your modal to work, and then it places the button wherever you set it on your component/screen.
+**withModal.js** is a <a href = "https://reactjs.org/docs/higher-order-components.html">Higher-Order Component</a>
+that consumes any component/screen, a button, and a modal, and returns the component/screen enhanced with all the
+logic necessary for your modal to work, and then it places the button wherever you set it on your component/screen.
 
 # Installation
 
@@ -255,8 +257,3 @@ If you want to see in a more graphical way how the **withModal** works, check th
 
 <a href = "https://snack.expo.dev/@kevwas/enhancedcomponentswithmodal">https://snack.expo.dev/@kevwas/enhancedcomponentswithmodal</a>
 
-# References
-
-### Higher-Order Components React's official docs:
-
-<a href = "https://reactjs.org/docs/higher-order-components.html">Higher-Order Components</a>
