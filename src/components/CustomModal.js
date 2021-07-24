@@ -1,3 +1,9 @@
+// This an example of a Modal.
+// You can use any Modal you want to place in the EnhancedComponent, change its style
+// To fit your needs.
+// Make sure the Modal receives the "visible" const and "callback" function through its props,
+// it will use for its open/close functionality. Otherwise, it won't work.
+
 import React from "react";
 import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
@@ -25,28 +31,26 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5
   },
-  button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2
-  },
   buttonClose: {
     backgroundColor: "#2196F3",
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
   },
 });
 
-const CustomModal = ({ visible, callback }) => (
+const CustomModal = (props) => (
   <Modal
     animationType="slide"
     transparent={true}
-    visible={visible}
-    onRequestClose={() => callback(!visible)}
+    visible={props.visible}
+    onRequestClose={() => props.callback(!props.visible)}
   >
     <View style={styles.centeredView}>
       <View style={styles.modalView}>
         <TouchableOpacity
-          style={[styles.button, styles.buttonClose]}
-          onPress={() => callback(!visible)}
+          style={styles.buttonClose}
+          onPress={() => props.callback(!visible)}
         >
           <Text style={styles.textStyle}>Close Modal</Text>
         </TouchableOpacity>
