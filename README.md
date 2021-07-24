@@ -1,5 +1,5 @@
 # Description
-High-Order Component that consumes any component/screen, a button, and any modal you want, and returns the component/screen enhanced with all the logic necesary for your modal to work and place the button wherever you set it on your screen.
+High-Order Component that consumes any component/screen, a button, and a modal, and returns the component/screen enhanced with all the logic necesary for your modal to work and place the button wherever you set it on your screen.
 
 # Installation
 
@@ -47,9 +47,9 @@ and the modal of your preference. Then, use it wherever you need it.
     // the onPress property of the TouchableOpacity uses them for opening the Modal.
     const CustomButton = (props) => (
         <Button
-        style={styles.button}
-        onPress={() => callback(!props.visible)}
-        title="Show Modal"
+            style={styles.button}
+            onPress={() => callback(!props.visible)}
+            title="Show Modal"
         />
     )
 
@@ -63,6 +63,14 @@ and the modal of your preference. Then, use it wherever you need it.
     // To fit your needs.
     // Make sure the Modal receives the "visible" const and "callback" function through its props,
     // it will use for its open/close functionality. Otherwise, it won't work.
+    
+    import React from "react";
+    import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
+    const styles = StyleSheet.create({  
+        // ... your Modal style.
+    });
+
     const CustomModal = (props) => (
         <Modal
             animationType="slide"
@@ -71,14 +79,14 @@ and the modal of your preference. Then, use it wherever you need it.
             onRequestClose={() => props.callback(!props.visible)}
         >
             <View style={styles.centeredView}>
-            <View style={styles.modalView}>
-                <TouchableOpacity
-                style={styles.buttonClose}
-                onPress={() => props.callback(!visible)}
-                >
-                <Text style={styles.textStyle}>Close Modal</Text>
-                </TouchableOpacity>
-            </View>
+                <View style={styles.modalView}>
+                    <TouchableOpacity
+                    style={styles.buttonClose}
+                    onPress={() => props.callback(!visible)}
+                    >
+                        <Text style={styles.textStyle}>Close Modal</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         </Modal>
     );
@@ -87,32 +95,29 @@ and the modal of your preference. Then, use it wherever you need it.
 
 - EnhancedComponent needs to receive the CustomButton as a prop to be able to open the modal.
 
-    // This is the component/screen you want to enhance with the modal.
-    // Make sure it receives the CustomButtom component through props.
-    // Place the Custom Button wherever you want in your component/screen.
+        // This is the component/screen you want to enhance with the modal.
+        // Make sure it receives the CustomButtom component through props.
+        // Place the Custom Button wherever you want in your component/screen.
+        import React from "react";
+        import { Text } from "react-native";
 
-    import React from "react";
-    import { Text } from "react-native";
+        const CustomText = ({ CustomButton }) => {
+            return(
+                <>
+                    <Text>This is the component to be enhanced with the modal</Text>
+                    {/* 
+                        Place the button that opens your modal wherever you need it,
+                        once you pass the button to the withModal wrapper, this will
+                        give it to this component as a prop.
+                    */}
+                    <CustomButton />
+                </>
+            );
+        };
 
-    const CustomText = ({ CustomButton }) => {
-    return(
-        <>
-        <Text>This is the component to be enhanced with the modal</Text>
-        {/* 
-            Place the button that opens your modal wherever you need it,
-            once you pass the button to the withModal wrapper, this will
-            give it to this component as a prop.
-        */}
-        <CustomButton />
-        </>
-    );
-    };
-
-    export default CustomText;
+        export default CustomText;
 
 # withModal.js
-
-withModal.js is the core of this repo:
 
     // withModal.js
     import React, { useState } from "react";
