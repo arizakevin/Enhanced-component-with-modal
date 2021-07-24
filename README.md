@@ -127,7 +127,7 @@ EnhancedComponent needs to receive the CustomButton as a prop to be able to open
 
 # One-File Enhanced Component
 
-This is how your enhanced component if you have everything in a single file
+This is how your enhanced component will look like if you have everything in a single file
 
     // OneFileEnhancedComponent.js
     import React from "react";
@@ -207,14 +207,14 @@ This is how your enhanced component if you have everything in a single file
       />
     );
 
-    const ComponentToBeEnhanced = ({ CustomButton }) => (
+    const ComponentToEnhance = ({ CustomButton }) => (
       <>
         <Text>This is the component to be enhanced with the modal</Text>
         <CustomButton />
       </>
     );
 
-    export default withModal(ComponentToBeEnhanced, MyButton, CustomModal);
+    export default withModal(ComponentToEnhance, MyButton, CustomModal);
 
 # withModal.js
 

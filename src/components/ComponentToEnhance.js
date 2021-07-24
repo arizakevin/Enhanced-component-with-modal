@@ -5,7 +5,7 @@
 import React from "react";
 import { Text } from "react-native";
 
-const CustomText = ({ CustomButton }) => (
+const ComponentToEnhance = ({ CustomButton }) => (
   <>
       <Text>This is the component to be enhanced with the modal</Text>
       {/* 
@@ -17,4 +17,4 @@ const CustomText = ({ CustomButton }) => (
   </>
 );
 
-export default CustomText;
+export default ComponentToEnhance;

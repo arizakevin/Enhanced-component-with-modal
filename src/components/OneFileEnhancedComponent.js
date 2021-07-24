@@ -1,3 +1,5 @@
+// The result of using this component is the same than using
+// the EnhancedComponent.js
 import React from "react";
 import { 
   Text, 
@@ -7,6 +9,7 @@ import {
   TouchableOpacity, 
   Modal 
 } from "react-native";
+import withModal from "../HOCs/withModal";
 
 const styles = StyleSheet.create({
   centeredView: {
@@ -56,8 +59,8 @@ const CustomModal = (props) => (
     <View style={styles.centeredView}>
       <View style={styles.modalView}>
         <TouchableOpacity
-            style={styles.buttonClose}
-            onPress={() => props.callback(!visible)}
+          style={styles.buttonClose}
+          onPress={() => props.callback(!visible)}
         >
           <Text style={styles.textStyle}>Close Modal</Text>
         </TouchableOpacity>
@@ -66,19 +69,19 @@ const CustomModal = (props) => (
   </Modal>
 );
 
-const CustomButton = (props) => (
+const MyButton  = (props) => (
   <Button
-      style={styles.button}
-      onPress={() => callback(!props.visible)}
-      title="Show Modal"
+    style={styles.button}
+    onPress={() => callback(!props.visible)}
+    title="Show Modal"
   />
 );
 
-const CustomText = ({ CustomButton }) => (
+const ComponentToEnhance = ({ CustomButton }) => (
   <>
     <Text>This is the component to be enhanced with the modal</Text>
     <CustomButton />
   </>
 );
 
-export default CustomText;
+export default withModal(ComponentToEnhance, MyButton, CustomModal);
