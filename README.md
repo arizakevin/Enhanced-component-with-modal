@@ -147,7 +147,7 @@ EnhancedComponent needs to receive the CustomButton as a prop to be able to open
 
 # Diagram
 
-If you to see in a more graphical way how the ***withModal*** works, check this diagram:
+If you want to see in a more graphical way how the ***withModal*** works, check this diagram:
 
 <a target="_blank" href = "./assets/EnhancedComponentWithModal.svg">
 <img src="./assets/EnhancedComponentWithModal.svg" alt="EnhancedComponentWithModal" height="400">
