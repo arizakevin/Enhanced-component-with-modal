@@ -23,8 +23,7 @@ go back to the root directory of the project (type ***cd ..***) and type
 # Usage
 
 Import the **withModal** HOC wherever you need it and export it passing it the component
-you want to enhance, the button that will be in your enhanced component 
-and the modal of your preference. Then, use it wherever you need it.
+you want to enhance, the button that will be in your enhanced component, and the modal of your preference. Then, use it wherever you need it.
 
     // index.js
     // EnhancedComponent:
