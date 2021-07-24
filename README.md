@@ -238,7 +238,7 @@ This is how your enhanced component will look like if you have everything in a s
 
 # Diagram
 
-If you want to see in a more graphical way how the ***withModal*** works, check this diagram:
+If you want to see in a more graphical way how the **withModal** works, check this diagram:
 
 <a target="_blank" href = "./assets/EnhancedComponentWithModal.svg">
 <img src="./assets/EnhancedComponentWithModal.svg" alt="EnhancedComponentWithModal" height="400">
@@ -247,7 +247,7 @@ If you want to see in a more graphical way how the ***withModal*** works, check 
 
 # Demo
 
-***Note:*** Test it with **My Device**, **iOS**, or **Android** options (The built-in React-Native Modal doesn't work on the web).
+**Note:** Test it with ***My Device***, ***iOS***, or ***Android*** options (The built-in React-Native Modal doesn't work on the web).
 
 <a href = "https://snack.expo.dev/@kevwas/enhancedcomponentswithmodal">https://snack.expo.dev/@kevwas/enhancedcomponentswithmodal</a>
 
