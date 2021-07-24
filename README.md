@@ -127,7 +127,7 @@ EnhancedComponent needs to receive the CustomButton as a prop to be able to open
 
 # One-File Enhanced Component
 
-This is how your enhanced component will look like if you have everything in a single file
+This is how your enhanced component will look like if you have everything in a single file.
 
     // OneFileEnhancedComponent.js
     import React from "react";
