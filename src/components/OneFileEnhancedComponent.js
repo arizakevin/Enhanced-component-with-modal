@@ -1,5 +1,5 @@
 // The result of using this component is the same than using
-// the EnhancedComponent.js
+// the EnhancedComponent
 import React from "react";
 import { 
   Text, 
