@@ -1,7 +1,9 @@
 # Description
 **withModal.js** is a <a href = "https://reactjs.org/docs/higher-order-components.html">Higher-Order Component</a>
-that consumes any component/screen, a button, and a modal, and returns the component/screen enhanced with all the
-necessary logic for your modal to work, and then it places the button wherever you set it on your component/screen.
+that consumes any component/screen, a button, and a modal, and returns the component/screen enhanced with the logic
+necessary for your modal to work, and then it places the button wherever you set it on your component/screen.
+This way, you save from having to write the code for the modal's logic on every single screen/component that needs
+a modal on your app, avoiding duplicated code.
 
 # Installation
 
