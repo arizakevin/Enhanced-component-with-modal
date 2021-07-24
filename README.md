@@ -24,7 +24,7 @@ app and run it.
 
 # Usage
 
-Import the withModal HOC wherever you need it and export it passing it the component
+Import the **withModal** HOC wherever you need it and export it passing it the component
 you want to enhance, the button that will be in your enhanced component 
 and the modal of your preference. Then, use it wherever you need it.
 
@@ -40,7 +40,7 @@ and the modal of your preference. Then, use it wherever you need it.
 
 ### Requirements:
 
-CustomButtom needs to receive the "visible" boolean prop to work.
+**CustomButtom** needs to receive the "visible" boolean prop to work.
 
     // CustomButton.js
     // You can change the style of the CustomButtom to fit the requirements of your UI.
@@ -55,7 +55,7 @@ CustomButtom needs to receive the "visible" boolean prop to work.
       }
     });
 
-    const CustomButton = (props) => (
+    const CustomButton = ({ callback }) => (
       <Button
         style={styles.button}
         onPress={() => callback(!props.visible)}
@@ -66,7 +66,7 @@ CustomButtom needs to receive the "visible" boolean prop to work.
     export default CustomButton;
 
 
-CustomModal needs to receive the "visible" boolean prop and the "callback" function to work.
+**CustomModal** needs to receive the "visible" boolean prop and the "callback" function to work.
 
     // CustomModal.js
     // This an example of a Modal.
@@ -81,18 +81,18 @@ CustomModal needs to receive the "visible" boolean prop and the "callback" funct
       // ... your Modal style.
     });
 
-    const CustomModal = (props) => (
+    const CustomModal = ({ visible, callback }) => (
       <Modal
         animationType="slide"
         transparent={true}
-        visible={props.visible}
-        onRequestClose={() => props.callback(!props.visible)}
+        visible={visible}
+        onRequestClose={() => callback(!visible)}
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <TouchableOpacity
               style={styles.buttonClose}
-              onPress={() => props.callback(!visible)}
+              onPress={() => callback(!visible)}
             >
               <Text style={styles.textStyle}>Close Modal</Text>
             </TouchableOpacity>
@@ -104,7 +104,7 @@ CustomModal needs to receive the "visible" boolean prop and the "callback" funct
     export default CustomModal;
 
 
-ComponentToEnhance needs to receive the CustomButton as a prop to be able to open the modal.
+**ComponentToEnhance** needs to receive the CustomButton as a prop to be able to open the modal.
 
         // This is the component/screen you want to enhance with the modal.
         // Make sure it receives the CustomButtom component through props.
@@ -180,18 +180,18 @@ This is how your enhanced component will look like if you have everything in a s
       }
     });
 
-    const CustomModal = (props) => (
+    const CustomModal = ({ visible, callback }) => (
       <Modal
         animationType="slide"
         transparent={true}
-        visible={props.visible}
-        onRequestClose={() => props.callback(!props.visible)}
+        visible={visible}
+        onRequestClose={() => callback(!visible)}
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <TouchableOpacity
-                style={styles.buttonClose}
-                onPress={() => props.callback(!visible)}
+              style={styles.buttonClose}
+              onPress={() => callback(!visible)}
             >
               <Text style={styles.textStyle}>Close Modal</Text>
             </TouchableOpacity>
@@ -200,7 +200,7 @@ This is how your enhanced component will look like if you have everything in a s
       </Modal>
     );
 
-    const MyButton  = (props) => (
+    const MyButton = ({ callback }) => (
       <Button
         style={styles.button}
         onPress={() => callback(!props.visible)}

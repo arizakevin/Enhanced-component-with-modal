@@ -49,18 +49,18 @@ const styles = StyleSheet.create({
   }
 });
 
-const CustomModal = (props) => (
+const CustomModal = ({ visible, callback }) => (
   <Modal
     animationType="slide"
     transparent={true}
-    visible={props.visible}
-    onRequestClose={() => props.callback(!props.visible)}
+    visible={visible}
+    onRequestClose={() => callback(!visible)}
   >
     <View style={styles.centeredView}>
       <View style={styles.modalView}>
         <TouchableOpacity
           style={styles.buttonClose}
-          onPress={() => props.callback(!visible)}
+          onPress={() => callback(!visible)}
         >
           <Text style={styles.textStyle}>Close Modal</Text>
         </TouchableOpacity>
@@ -69,7 +69,7 @@ const CustomModal = (props) => (
   </Modal>
 );
 
-const MyButton  = (props) => (
+const MyButton = ({ callback }) => (
   <Button
     style={styles.button}
     onPress={() => callback(!props.visible)}
