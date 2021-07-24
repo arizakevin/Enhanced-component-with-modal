@@ -148,7 +148,7 @@ EnhancedComponent needs to receive the CustomButton as a prop to be able to open
 # Diagram
 
 If you to see in a more graphical way, check this diagram:
-<a href = "./assets/EnhancedComponentWithModal.html" target="
+<a href = "./assets/codeEnhancedComponentWithModal.html" target="
 _blank">Enhanced Component with Modal</a>
 
 
