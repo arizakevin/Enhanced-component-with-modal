@@ -133,12 +133,12 @@ This is how your enhanced component will look like if you have everything in a s
     // OneFileEnhancedComponent.js
     import React from "react";
     import { 
-    Text, 
-    Button, 
-    StyleSheet, 
-    View, 
-    TouchableOpacity, 
-    Modal 
+      Text, 
+      Button, 
+      StyleSheet, 
+      View, 
+      TouchableOpacity, 
+      Modal 
     } from "react-native";
     import withModal from "../HOCs/withModal";
 
