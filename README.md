@@ -28,7 +28,8 @@ Import the withModal HOC wherever you need it and export it passing it the compo
 you want to enhance, the button that will be in your enhanced component 
 and the modal of your preference. Then, use it wherever you need it.
 
-    // EnhancedComponent.js
+    // index.js
+    // EnhancedComponent:
     import ComponentToEnhance from "./ComponentToEnhance";
     import CustomButton from "./CustomButton";
     import CustomModal from "./CustomModal";
@@ -103,7 +104,7 @@ CustomModal needs to receive the "visible" boolean prop and the "callback" funct
     export default CustomModal;
 
 
-EnhancedComponent needs to receive the CustomButton as a prop to be able to open the modal.
+ComponentToEnhance needs to receive the CustomButton as a prop to be able to open the modal.
 
         // This is the component/screen you want to enhance with the modal.
         // Make sure it receives the CustomButtom component through props.
@@ -111,7 +112,7 @@ EnhancedComponent needs to receive the CustomButton as a prop to be able to open
         import React from "react";
         import { Text } from "react-native";
 
-        const CustomText = ({ CustomButton }) => (
+        const ComponentToEnhance = ({ CustomButton }) => (
             <>
               <Text>This is the component to be enhanced with the modal</Text>
               {/* 
@@ -123,7 +124,7 @@ EnhancedComponent needs to receive the CustomButton as a prop to be able to open
             </>
         );
 
-        export default CustomText;
+        export default ComponentToEnhance;
 
 # One-File Enhanced Component
 
