@@ -125,7 +125,7 @@ and the modal of your preference. Then, use it wherever you need it.
 
         export default ComponentToEnhance;
 
-## One-File Enhanced Component
+# One-File Enhanced Component
 
 This is how your enhanced component will look like if you have everything in a single file.
 
