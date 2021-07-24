@@ -45,6 +45,15 @@ and the modal of your preference. Then, use it wherever you need it.
     // You can change the style of the CustomButtom to fit the requirements of your UI.
     // Make sure it receives the "visible" const and "callback" function through its props,
     // the onPress property of the TouchableOpacity uses them for opening the Modal.
+    import React from "react";
+    import { Button, StyleSheet } from "react-native";
+
+    const styles = StyleSheet.create({
+        button: {
+            // ...Your button style
+        }
+    });
+
     const CustomButton = (props) => (
         <Button
             style={styles.button}
