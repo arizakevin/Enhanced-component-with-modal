@@ -1,16 +1,14 @@
 # Description
-High-Order Component that consumes any component/screen, a button, and a modal, and returns the component/screen enhanced with all the logic necesary for your modal to work and place the button wherever you set it on your screen.
+withModal.js is a Higher-Order Component that consumes any component/screen, a button, and a modal, and returns the component/screen enhanced with all the logic necessary for your modal to work, and then it places the button wherever you set it on your component/screen.
 
 # Installation
 
 Download or clone the source code, open your terminal in the project directory, 
 do ***npm install*** (or ***yarn install***). Then, go to the ***ios*** folder 
 (type ***cd ios*** in your terminal when already on the root directory) and do
-***pod install*** (you must have xcode installed from the App Store). Finally, 
+***pod install*** (you must have Xcode installed from the App Store). Finally, 
 go back to the root directory of the project (type ***cd ..***) and type 
-***npm run ios*** in your terminal. If you did well, the Metro bundler will 
-start building the app an then this will open your iOS simulator, install the 
-app and run it.
+***npm run ios*** in your terminal. If you did well, the Metro bundler will start building the app and then it will open your iOS simulator, install the app and run it.
 
 ### List of commands in order:
 
@@ -216,7 +214,7 @@ This is how your enhanced component will look like if you have everything in a s
 
     export default withModal(ComponentToEnhance, MyButton, CustomModal);
 
-# withModal.js
+# Core: withModal.js
 
     // withModal.js
     import React, { useState } from "react";
