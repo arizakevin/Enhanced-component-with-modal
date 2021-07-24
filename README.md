@@ -12,8 +12,8 @@ go back to the root directory of the project (type ***cd ..***) and type
 
 ### List of commands in order:
 
-    $ git clone https://github.com/Kevwas/Generic-HOC-Error-Boundary.git
-    $ cd Generic-HOC-Error-Boundary
+    $ git clone https://github.com/kevinblankfactor/Enhanced-component-with-modal.git
+    $ cd Enhanced-component-with-modal
     $ npm install 
     $ cd ios
     $ pod install
