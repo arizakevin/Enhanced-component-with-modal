@@ -5,18 +5,16 @@
 import React from "react";
 import { Text } from "react-native";
 
-const CustomText = ({ CustomButton }) => {
-  return(
-    <>
+const CustomText = ({ CustomButton }) => (
+  <>
       <Text>This is the component to be enhanced with the modal</Text>
       {/* 
-        Place the button that opens your modal wherever you need it,
-        once you pass the button to the withModal wrapper, this will
-        give it to this component as a prop.
+          Place the button that opens your modal wherever you need it,
+          once you pass the button to the withModal wrapper, this will
+          give it to this component as a prop.
       */}
       <CustomButton />
-    </>
-  );
-};
+  </>
+);
 
 export default CustomText;

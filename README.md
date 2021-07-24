@@ -100,7 +100,7 @@ and the modal of your preference. Then, use it wherever you need it.
         import React from "react";
         import { Text } from "react-native";
 
-        const CustomText = ({ CustomButton }) =>(
+        const CustomText = ({ CustomButton }) => (
             <>
                 <Text>This is the component to be enhanced with the modal</Text>
                 {/* 
