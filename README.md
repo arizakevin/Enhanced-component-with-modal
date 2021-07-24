@@ -40,7 +40,7 @@ and the modal of your preference. Then, use it wherever you need it.
 
 ### Requirements:
 
-**CustomButtom** needs to receive the "visible" boolean prop to work.
+**CustomButtom** needs to receive the "visible" boolean prop and the "callback" function to work.
 
     // CustomButton.js
     // You can change the style of the CustomButtom to fit the requirements of your UI.
@@ -66,7 +66,7 @@ and the modal of your preference. Then, use it wherever you need it.
     export default CustomButton;
 
 
-**CustomModal** needs to receive the "visible" boolean prop and the "callback" function to work.
+**CustomModal** also needs to receive the "visible" boolean prop and the "callback" function to work.
 
     // CustomModal.js
     // This an example of a Modal.
