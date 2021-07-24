@@ -6,6 +6,6 @@ import ComponentToEnhance from "./ComponentToEnhance";
 import CustomButton from "./CustomButton";
 import CustomModal from "./CustomModal";
 
-import withModal from "../../HOCs/withModal";
+import withModal from "../withModal";
 
 export default withModal(ComponentToEnhance, CustomButton, CustomModal);

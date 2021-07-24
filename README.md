@@ -55,10 +55,10 @@ and the modal of your preference. Then, use it wherever you need it.
       }
     });
 
-    const CustomButton = ({ callback }) => (
+    const CustomButton = ({ visible, callback }) => (
       <Button
         style={styles.button}
-        onPress={() => callback(!props.visible)}
+        onPress={() => callback(!visible)}
         title="Show Modal"
       />
     );
@@ -126,7 +126,7 @@ and the modal of your preference. Then, use it wherever you need it.
 
         export default ComponentToEnhance;
 
-# One-File Enhanced Component
+## One-File Enhanced Component
 
 This is how your enhanced component will look like if you have everything in a single file.
 
@@ -200,10 +200,10 @@ This is how your enhanced component will look like if you have everything in a s
       </Modal>
     );
 
-    const MyButton = ({ callback }) => (
+    const MyButton = ({ visible, callback }) => (
       <Button
         style={styles.button}
-        onPress={() => callback(!props.visible)}
+        onPress={() => callback(!visible)}
         title="Show Modal"
       />
     );
@@ -225,7 +225,12 @@ This is how your enhanced component will look like if you have everything in a s
     const withModal = (Component, CustomButton, CustomModal) => () => {
       const [modalVisible, setModalVisible] = useState(false);
 
-      const ButtonWithCallback = () => { return CustomButton(modalVisible, setModalVisible) };
+      const ButtonWithCallback = () => ( 
+        <CustomButton 
+          visible={modalVisible} 
+          callback={setModalVisible} 
+        /> 
+      );
 
       return (
         <>

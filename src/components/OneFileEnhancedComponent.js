@@ -9,7 +9,7 @@ import {
   TouchableOpacity, 
   Modal 
 } from "react-native";
-import withModal from "../HOCs/withModal";
+import withModal from "./withModal";
 
 const styles = StyleSheet.create({
   centeredView: {
@@ -69,10 +69,10 @@ const CustomModal = ({ visible, callback }) => (
   </Modal>
 );
 
-const MyButton = ({ callback }) => (
+const MyButton = ({ visible, callback }) => (
   <Button
     style={styles.button}
-    onPress={() => callback(!props.visible)}
+    onPress={() => callback(!visible)}
     title="Show Modal"
   />
 );

@@ -15,6 +15,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       <EnhancedComponent />
+      {/* <OneFileEnhancedComponent /> */}
     </View>
   );
 };

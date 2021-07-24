@@ -14,10 +14,10 @@ const styles = StyleSheet.create({
   }
 });
 
-const CustomButton = ({ callback }) => (
+const CustomButton = ({ visible, callback }) => (
   <Button
     style={styles.button}
-    onPress={() => callback(!props.visible)}
+    onPress={() => callback(!visible)}
     title="Show Modal"
   />
 );
