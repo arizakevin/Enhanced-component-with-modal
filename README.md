@@ -156,6 +156,8 @@ If you to see in a more graphical way how the ***withModal*** works, check this 
 
 # Demo
 
+***Note:*** Test it with My Device, iOS, or Android options (The built-in React-Native Modal doesn't work on the web).
+
 <a href = "https://snack.expo.dev/@kevwas/enhancedcomponentswithmodal">https://snack.expo.dev/@kevwas/enhancedcomponentswithmodal</a>
 
 # References
