@@ -49,17 +49,17 @@ CustomButtom needs to receive the "visible" boolean prop to work.
     import { Button, StyleSheet } from "react-native";
 
     const styles = StyleSheet.create({
-        button: {
-            // ...Your button style
-        }
+      button: {
+        // ...Your button style
+      }
     });
 
     const CustomButton = (props) => (
-        <Button
-            style={styles.button}
-            onPress={() => callback(!props.visible)}
-            title="Show Modal"
-        />
+      <Button
+        style={styles.button}
+        onPress={() => callback(!props.visible)}
+        title="Show Modal"
+      />
     );
 
     export default CustomButton;
@@ -77,27 +77,27 @@ CustomModal needs to receive the "visible" boolean prop and the "callback" funct
     import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
     const styles = StyleSheet.create({  
-        // ... your Modal style.
+      // ... your Modal style.
     });
 
     const CustomModal = (props) => (
-        <Modal
-            animationType="slide"
-            transparent={true}
-            visible={props.visible}
-            onRequestClose={() => props.callback(!props.visible)}
-        >
-            <View style={styles.centeredView}>
-                <View style={styles.modalView}>
-                    <TouchableOpacity
-                    style={styles.buttonClose}
-                    onPress={() => props.callback(!visible)}
-                    >
-                        <Text style={styles.textStyle}>Close Modal</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-        </Modal>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={props.visible}
+        onRequestClose={() => props.callback(!props.visible)}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <TouchableOpacity
+              style={styles.buttonClose}
+              onPress={() => props.callback(!visible)}
+            >
+              <Text style={styles.textStyle}>Close Modal</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     );
 
     export default CustomModal;
@@ -113,17 +113,108 @@ EnhancedComponent needs to receive the CustomButton as a prop to be able to open
 
         const CustomText = ({ CustomButton }) => (
             <>
-                <Text>This is the component to be enhanced with the modal</Text>
-                {/* 
-                    Place the button that opens your modal wherever you need it,
-                    once you pass the button to the withModal wrapper, this will
-                    give it to this component as a prop.
-                */}
-                <CustomButton />
+              <Text>This is the component to be enhanced with the modal</Text>
+              {/* 
+                Place the button that opens your modal wherever you need it,
+                once you pass the button to the withModal wrapper, this will
+                give it to this component as a prop.
+              */}
+              <CustomButton />
             </>
         );
 
         export default CustomText;
+
+# One-File Enhanced Component
+
+This is how your enhanced component if you have everything in a single file
+
+    // OneFileEnhancedComponent.js
+    import React from "react";
+    import { 
+    Text, 
+    Button, 
+    StyleSheet, 
+    View, 
+    TouchableOpacity, 
+    Modal 
+    } from "react-native";
+    import withModal from "../HOCs/withModal";
+
+    const styles = StyleSheet.create({
+      centeredView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      },
+      modalView: {
+        margin: 0,
+        flex:1,
+        width: "100%",
+        backgroundColor: "gray",
+        opacity: 0.5,
+        padding: 35,
+        alignItems: "center",
+        justifyContent: "flex-end",
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5
+      },
+      buttonClose: {
+        backgroundColor: "#2196F3",
+        borderRadius: 20,
+        padding: 10,
+        elevation: 2,
+      },
+      button: {
+        borderRadius: 20,
+        padding: 10,
+        elevation: 2,
+        backgroundColor: "green",
+      }
+    });
+
+    const CustomModal = (props) => (
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={props.visible}
+        onRequestClose={() => props.callback(!props.visible)}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <TouchableOpacity
+                style={styles.buttonClose}
+                onPress={() => props.callback(!visible)}
+            >
+              <Text style={styles.textStyle}>Close Modal</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
+    );
+
+    const MyButton  = (props) => (
+      <Button
+        style={styles.button}
+        onPress={() => callback(!props.visible)}
+        title="Show Modal"
+      />
+    );
+
+    const ComponentToBeEnhanced = ({ CustomButton }) => (
+      <>
+        <Text>This is the component to be enhanced with the modal</Text>
+        <CustomButton />
+      </>
+    );
+
+    export default withModal(ComponentToBeEnhanced, MyButton, CustomModal);
 
 # withModal.js
 
@@ -131,16 +222,16 @@ EnhancedComponent needs to receive the CustomButton as a prop to be able to open
     import React, { useState } from "react";
 
     const withModal = (Component, CustomButton, CustomModal) => () => {
-        const [modalVisible, setModalVisible] = useState(false);
+      const [modalVisible, setModalVisible] = useState(false);
 
-        const ButtonWithCallback = () => { return CustomButton(modalVisible, setModalVisible) }
+      const ButtonWithCallback = () => { return CustomButton(modalVisible, setModalVisible) };
 
-        return (
+      return (
         <>
-            <CustomModal visible={modalVisible} callback={setModalVisible} />
-            <Component CustomButton={ButtonWithCallback} />
+          <CustomModal visible={modalVisible} callback={setModalVisible} />
+          <Component CustomButton={ButtonWithCallback} />
         </>
-        );
+      );
     }
 
     export default withModal;
