@@ -63,7 +63,6 @@ and the modal of your preference. Then, use it wherever you need it.
     // To fit your needs.
     // Make sure the Modal receives the "visible" const and "callback" function through its props,
     // it will use for its open/close functionality. Otherwise, it won't work.
-    
     import React from "react";
     import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
