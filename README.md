@@ -156,7 +156,7 @@ If you to see in a more graphical way how the ***withModal*** works, check this 
 
 # Demo
 
-<a href = "https://snack.expo.dev/@kevwas/hoc-example-with-modal">https://snack.expo.dev/@kevwas/hoc-example-with-modal</a>
+<a href = "https://snack.expo.dev/@kevwas/enhancedcomponentswithmodal">https://snack.expo.dev/@kevwas/enhancedcomponentswithmodal</a>
 
 # References
 
