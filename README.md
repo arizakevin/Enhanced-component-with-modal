@@ -33,8 +33,7 @@ and the modal of your preference. Then, use it wherever you need it.
     import ComponentToEnhance from "./ComponentToEnhance";
     import CustomButton from "./CustomButton";
     import CustomModal from "./CustomModal";
-
-    import withModal from "../HOCs/withModal";
+    import withModal from "../withModal";
 
     export default withModal(ComponentToEnhance, CustomButton, CustomModal);
 
@@ -140,7 +139,7 @@ This is how your enhanced component will look like if you have everything in a s
       TouchableOpacity, 
       Modal 
     } from "react-native";
-    import withModal from "../HOCs/withModal";
+    import withModal from "./withModal";
 
     const styles = StyleSheet.create({
       centeredView: {
